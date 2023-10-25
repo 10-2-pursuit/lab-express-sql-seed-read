@@ -1,5 +1,5 @@
 const express = require("express");
-const { getAllMusic } = require("../queries/bookmarks.js");
+// const { getAllMusic } = require("../queries/bookmarks.js");
 
 const songs = express.Router();
 

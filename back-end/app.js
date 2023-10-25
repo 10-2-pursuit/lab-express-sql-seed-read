@@ -1,7 +1,9 @@
 const express = require("express");
 const cors = require("cors");
 const app = express();
-const songsController = require("./controllers/bookmarksController");
+
+const songsController = require("./controllers/songController.js")
+
 app.use(cors());
 app.use(express.json());
 
@@ -9,7 +11,7 @@ app.use("/songs", songsController);
 
 
 app.get("/", (req, res) => {
-  res.send("Welcome to Music App!");
+  res.send("Welcome to the Music App!");
 });
 
 app.get("*", (req, res) => {
