@@ -33,9 +33,8 @@ songs.get("/:id", async (req, res) => {
 songs.post("/", async (req, res) => {
     //const {name, artist, album, time, is_favorite} = req.body;
     const song = await createOneSong(req.body);
-    console.log(song);
     if(song[0] && song.length > 0){
-        res.status(200).json(song);
+        res.status(200).json(song[0]);
     }
     else{
         res.status(400).json("wrong")

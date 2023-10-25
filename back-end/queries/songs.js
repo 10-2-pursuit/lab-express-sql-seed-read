@@ -21,15 +21,12 @@ const getOneSong = async (id) => {
 const createOneSong = async (item) => {
     console.log(item)
     if(!item.name || !item.artist ){
-        console.log("2")
         return {error: "something is missing"};
     }
     try {
         const oneSong = await db.any(`INSERT INTO songs (name, artist, album, time, is_favorite) VALUES ('${item.name}', '${item.artist}', '${item.album}', '${item.time}', ${item.is_favorite}) RETURNING *`);
-        console.log("1")
         return oneSong;
     } catch(err){
-        console.log("3")
         return err;
     }
 }
