@@ -13,6 +13,17 @@ songs.get("/", async (req, res) => {
     } 
 });
 
+songs.get("/:id", async (req, res) => {
+    const { id } = req.params;
+    const oneSong = await getOneSong(id);
+
+    if (oneSong) {
+        res.status(200).json(oneSong);
+    } else {
+        res.status(404).json( { error: "Song not found!" } );
+    }
+});
+
 songs.post("/", async (req, res) => {
     try {
         const createdSong = await createSong(req.body)
@@ -22,15 +33,5 @@ songs.post("/", async (req, res) => {
     }
 })
 
-songs.get("/:id", async (req, res) => {
-    const {id} = req.params;
-    const oneSong = await getOneSong(id);
-     
-    if (oneSong) {
-        res.status(200).json(oneSong);
-    } else {
-        res.status(404).json({success: false, data:{ error: "Song not found!" }});
-    } 
-})
 
 module.exports = songs;
