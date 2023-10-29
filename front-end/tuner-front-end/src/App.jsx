@@ -20,6 +20,7 @@ function App() {
             <Route path="/transactions/new" element={<New />} />
             <Route path="/transactions/:id" element={<Show />} />
             <Route path="/transactions/:id/edit" element={<Update />} />
+            <Route path="/404" element={<ErrorMessage />} />
           </Routes>
         </div>
       </BrowserRouter>
