@@ -31,7 +31,7 @@ songs.get("/:id", async (req, res) => {
   if (oneSong.id) {
     res.status(200).json(oneSong);
   } else {
-    res.status(404).json({ error: "Song not found!" });
+    res.status(404).json("No song at that id");
   }
 });
 
