@@ -24,7 +24,7 @@ songs.get("/:id", async (req, res) => {
     }
 });
 
-songs.post("/", checkName, async (req, res) => {
+songs.post("/", checkName, checkBoolean, async (req, res) => {
     try {
         const createdSong = await createSong(req.body)
         res.json(createdSong)
