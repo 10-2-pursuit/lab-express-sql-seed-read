@@ -6,7 +6,7 @@ const {
   deleteSong,
   updateSong,
 } = require("../queries/songs.js");
-const { checkName, checkBoolean } = require("../validatons/checkSongs.js");
+const { checkName, checkArtist, checkBoolean } = require("../validatons/checkSongs.js");
 const songs = express.Router();
 
 songs.get("/", async (req, res) => {
@@ -35,10 +35,10 @@ songs.get("/:id", async (req, res) => {
   }
 });
 
-songs.post("/", checkName, checkBoolean, async (req, res) => {
+songs.post("/", checkName, checkArtist, checkBoolean, async (req, res) => {
   try {
     const createdSong = await createSong(req.body);
-    res.json(createdSong);
+    res.status(200).json(createdSong);
   } catch (error) {
     res.status(400).json({ error: "There is an error" });
   }

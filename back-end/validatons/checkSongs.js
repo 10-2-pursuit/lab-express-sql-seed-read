@@ -7,6 +7,15 @@ const checkName = (req, res, next) => {
     }
 }
 
+const checkArtist = (req, res, next) => {
+    if(req.body.artist){
+        console.log("artist is good")
+        next()
+    } else {
+        res.status(400).json({error: "Artist is required"})
+    }
+}
+
 const checkBoolean = (req, res, next) => {
     if(req.body.is_favorite === true || req.body.is_favorite === false){
         next()
@@ -17,5 +26,6 @@ const checkBoolean = (req, res, next) => {
 
 module.exports = {
     checkName,
+    checkArtist,
     checkBoolean
 }
