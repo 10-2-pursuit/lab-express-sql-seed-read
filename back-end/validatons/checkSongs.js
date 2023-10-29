@@ -16,6 +16,24 @@ const checkArtist = (req, res, next) => {
     }
 }
 
+const checkAlbum = (req, res, next) => {
+    if(typeof req.body.album === 'string'){
+        console.log("album is good")
+        next()
+    } else {
+        res.status(400).json({error: "Album is the wrong data type"})
+    }
+}
+
+const checkTime = (req, res, next) => {
+    if(typeof req.body.time === 'string'){
+        console.log("time is good")
+        next()
+    } else {
+        res.status(400).json({error: "Time is the wrong data type"})
+    }
+}
+
 const checkBoolean = (req, res, next) => {
     if(req.body.is_favorite === true || req.body.is_favorite === false){
         console.log("boolean is good")
@@ -28,5 +46,7 @@ const checkBoolean = (req, res, next) => {
 module.exports = {
     checkName,
     checkArtist,
+    checkAlbum,
+    checkTime,
     checkBoolean
 }
