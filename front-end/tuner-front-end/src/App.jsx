@@ -6,6 +6,7 @@ import Index from "../Components/Index";
 import New from "../Components/New";
 import Show from "../Components/Show";
 import Update from "../Components/Update";
+import ErrorMessage from "../Components/ErrorMessage"
 import "./App.css";
 
 function App() {
@@ -16,10 +17,10 @@ function App() {
         <div className="container">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/transactions" element={<Index />} />
-            <Route path="/transactions/new" element={<New />} />
-            <Route path="/transactions/:id" element={<Show />} />
-            <Route path="/transactions/:id/edit" element={<Update />} />
+            <Route path="/songs" element={<Index />} />
+            <Route path="/songs/new" element={<New />} />
+            <Route path="/songs/:id" element={<Show />} />
+            <Route path="/songs/:id/edit" element={<Update />} />
             <Route path="/404" element={<ErrorMessage />} />
           </Routes>
         </div>
