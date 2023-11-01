@@ -8,10 +8,10 @@ albums.get("/", async (req, res) => {
   try {
     const song = await getOneSong(song_id);
     const allAlbums = await getAllAlbums(song_id);
-    res.json({ ...song, allAlbums });
+    res.json({ ...song, allAlbums: allAlbums });
   } catch (error) {
     res.json(error);
   }
 });
 
-module.export = albums;
+module.exports = albums;

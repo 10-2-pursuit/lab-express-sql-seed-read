@@ -12,10 +12,13 @@ VALUES
 
 INSERT INTO albums (song_id, title, artist, release_year)
 VALUES
-    ('1','Young Americans', 'David Bowie', 1975),
-    ('2','Remain in Light', 'Talking Heads', 1980),
-    ('4','Remain in Light', 'Talking Heads', 1980),
-    ('3','Sand in the Vaseline', 'Talking Heads', 1992),
-    ('5','New Day Rising', 'Hüsker Dü', 1985),
-    ('6','Thin Mind', 'Wolf Parade', 2020),
-    ('7','This is...', 'Icona Pop', NULL);
+    ('1', 'Young Americans', 'David Bowie', 1975),
+    ('2', 'Remain in Light', 'Talking Heads', 1980),
+    ('2', 'Remain in Light (Deluxe)', 'Talking Heads', NULL),
+    ('4', 'Remain in Light', 'Talking Heads', 1980),
+    ('4', 'Remains of the Day', 'Talking Heads', NULL),
+    ('3', 'Sand in the Vaseline', 'Talking Heads', 1992),
+    ('5', 'New Day Rising', 'Hüsker Dü', NULL),
+    ('6', 'Thin Mind', 'Wolf Parade', 2020),
+    ('7', 'This is...', 'Icona Pop', NULL);
+    ('7', 'Club Romantech', 'Icona Pop', 2023);
