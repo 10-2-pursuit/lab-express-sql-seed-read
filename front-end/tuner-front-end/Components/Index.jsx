@@ -31,7 +31,7 @@ const Index = () => {
           </thead>
           <tbody>
             {songs.map((song) => (
-              <Song key={song.id} id={song.id} song={song} /> 
+              <Song key={song.id} song={song} /> 
             ))}
           </tbody>
         </table>
