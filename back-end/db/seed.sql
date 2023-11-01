@@ -20,5 +20,5 @@ VALUES
     ('3', 'Sand in the Vaseline', 'Talking Heads', 1992),
     ('5', 'New Day Rising', 'Hüsker Dü', NULL),
     ('6', 'Thin Mind', 'Wolf Parade', 2020),
-    ('7', 'This is...', 'Icona Pop', NULL);
+    ('7', 'This is...', 'Icona Pop', NULL),
     ('7', 'Club Romantech', 'Icona Pop', 2023);
