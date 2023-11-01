@@ -6,6 +6,7 @@ const {
   deleteSong,
   updateSong,
 } = require("../queries/songs.js");
+const albumController = require("./albumController.js")
 const {
   checkName,
   checkArtist,
@@ -15,6 +16,7 @@ const {
 } = require("../validatons/checkSongs.js");
 const songs = express.Router();
 
+songs.use("/:song_id/albums", albumController);
 songs.get("/", async (req, res) => {
   const allSongs = await getAllSongs();
 

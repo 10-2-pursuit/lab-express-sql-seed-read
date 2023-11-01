@@ -16,7 +16,6 @@
     id SERIAL PRIMARY KEY,
     title TEXT NOT NULL,
     artist TEXT NOT NULL,
-    release_year INT
-    song_ids INTEGER [] 
-    FOREIGN KEY (song_ids) REFERENCES songs (id) ON DELETE CASCADE
+    release_year INT, 
+    song_id INTEGER REFERENCES songs (id) ON DELETE CASCADE
     );

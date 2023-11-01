@@ -10,11 +10,12 @@ VALUES
     ('Mr. Startup', 'Wolf Parade', 'Thin Mind', '3:31', true ),
     ('We Got the World', 'Icona Pop', 'This is...', '3:17', false );
 
-INSERT INTO albums (title, artist, release_year, song_ids)
+INSERT INTO albums (song_id, title, artist, release_year)
 VALUES
-    ('Young Americans', 'David Bowie', 1975, ARRAY[1]),
-    ('Remain in Light', 'Talking Heads', 1980, ARRAY[2, 4]),
-    ('Sand in the Vaseline', 'Talking Heads', 1992, ARRAY[3]),
-    ('New Day Rising', 'Hüsker Dü', 1985, ARRAY[5]),
-    ('Thin Mind', 'Wolf Parade', 2020, ARRAY[6]),
-    ('This is...', 'Icona Pop', NULL, ARRAY[7]);
+    ('1','Young Americans', 'David Bowie', 1975),
+    ('2','Remain in Light', 'Talking Heads', 1980),
+    ('4','Remain in Light', 'Talking Heads', 1980),
+    ('3','Sand in the Vaseline', 'Talking Heads', 1992),
+    ('5','New Day Rising', 'Hüsker Dü', 1985),
+    ('6','Thin Mind', 'Wolf Parade', 2020),
+    ('7','This is...', 'Icona Pop', NULL);
