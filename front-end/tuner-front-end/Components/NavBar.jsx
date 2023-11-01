@@ -2,12 +2,12 @@ import { Link } from "react-router-dom";
 
 const NavBar = () => {
   return (
-    <nav className="navbar">
-      <h1 className="nav-link">
-        <Link to="/songs">Tuner App</Link>
+    <nav className="navbar fixed-top border-bottom">
+      <h1 className="navLink">
+        <Link to="/songs" style={{color:"#DFB6B2"}}>Tuner App</Link>
       </h1>
-      <button className="nav-link">
-        <Link to="/songs/new">Add New Song</Link>
+      <button className="navLink">
+        <Link to="/songs/new" style={{color:"#2B124C"}}>Add New Song</Link>
       </button>
     </nav>
   );
