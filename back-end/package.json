@@ -7,7 +7,8 @@
     "db:init": "psql -U postgres -f db/schema.sql",
     "db:seed": "psql -U postgres -f db/seed.sql",
     "test": "jest --runInBand",
-    "dbinit": "psql -U postgres -f db/schema.sql; psql -U postgres -f db/seed.sql"
+    "dbinit": "psql -U postgres -f db/schema.sql; psql -U postgres -f db/seed.sql",
+    "start": "nodemon server.js"
   },
   "repository": {
     "type": "git",

@@ -14,3 +14,12 @@ VALUES
 ('Books about UFOs', 'Hüsker Dü', 'New Day Rising', '2:49', true ),
 ('Mr. Startup', 'Wolf Parade', 'Thin Mind', '3:31', true ),
 ('We Got the World', 'Icona Pop', 'This is...', '3:17', false );
+
+INSERT INTO artists (artist, nationality, is_favorite)
+VALUES
+('Rolling Stones', 'United Kingdom', false),
+('David Bowie', 'United Kingdom', false),
+('Talking Heads', 'United States', false),
+('Hüsker Dü', 'United States', false),
+('Wolf Parade', 'Canada', false),
+('Icona Pop', 'Sweden', false);

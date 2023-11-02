@@ -7,7 +7,7 @@ songs.get("/", async (req, res) => {
     const allSongs = await getAllSongs();
     if(allSongs[0]){
         //no query, show everything
-        res.status(200).json(allSongs );
+        res.status(200).json(allSongs);
     }
     else{
         //do something for queries
@@ -37,7 +37,7 @@ songs.post("/", async (req, res) => {
         res.status(200).json(song[0]);
     }
     else{
-        res.status(400).json("wrong")
+        res.status(400).json("wrong");
     }
 });
 
@@ -52,7 +52,7 @@ songs.put("/:id", async (req,res) => {
     else{
         res.status(400).json("wrong")
     }
-})
+});
 
 /** delete */
 songs.delete("/:id", async (req, res) => {
@@ -64,7 +64,7 @@ songs.delete("/:id", async (req, res) => {
     else{
         res.status(404).json("wrong");
     }
-})
+});
 
 /** page 404 */
 songs.get("*", (req, res) => {
