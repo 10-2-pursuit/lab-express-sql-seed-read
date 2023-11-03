@@ -45,3 +45,34 @@ export async function destroySong(id:string) {
     method: "DELETE",
   });
 }
+
+// Index/Get all
+export async function getPlaylist() {
+    return await fetch(`${URL}/playlist`).then((res) => {
+      console.log(res);
+      return res.json();
+    });
+}
+
+// Create
+export async function addSongToPlaylist(id:string) {
+    return await fetch(`${URL}/playlist/`, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({id}),
+    });
+}
+
+export async function removeSongToPlaylist(id:string) {
+    return await fetch(`${URL}/playlist/`, {
+      method: "DELETE",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({id}),
+    });
+}

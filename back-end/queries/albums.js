@@ -21,7 +21,7 @@ const getAllAlbums = async (artist_id) => {
 
 const getOneAlbum = async (id) => {
     try{
-        const album = await db.any(`SELECT * FROM albums WHERE id = ${id}`);
+        const album = await db.any(`SELECT * FROM albums WHERE album_id = ${id}`);
         return album;
     } catch(err) {
         return err;
@@ -43,7 +43,7 @@ const createOneAlbum = async (item, artist_id) => {
 
 const updateOneAlbum = async(id, body) => {
     try {
-        const album = await db.any(`UPDATE albums SET album='${body.album}', year='${body.year}' artist_id='${body.artist_id}', is_favorite=${body.is_favorite}, artist_id = ${body.artist_id} WHERE id = ${id} RETURNING *`);
+        const album = await db.any(`UPDATE albums SET album='${body.album}', year='${body.year}' artist_id='${body.artist_id}', is_favorite=${body.is_favorite}, artist_id = ${body.artist_id} WHERE album_id = ${id} RETURNING *`);
         return album;
     } catch(err){
         return err;
@@ -53,7 +53,7 @@ const updateOneAlbum = async(id, body) => {
 const deleteOneAlbum = async(id) => {
     //console.log(id);
     try {
-        const album = await db.any(`DELETE FROM albums WHERE id = ${id} RETURNING *`);
+        const album = await db.any(`DELETE FROM albums WHERE album_id = ${id} RETURNING *`);
         return album;
     } catch(err){
         return err;

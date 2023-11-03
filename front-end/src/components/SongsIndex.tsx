@@ -1,12 +1,10 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
 import { SingleSong } from "./SingleSong";
 import { getAllSongs } from "../api/fetch";
 import { songObjectInit } from "../interfaces/interface";
 
 export default function SongsIndex(){
     const [songs, setSongs] = useState([songObjectInit]);
-    const { id } = useParams();
 
     useEffect(() => {
         getAllSongs().then(response => setSongs([...response])).catch(err => console.error(err));

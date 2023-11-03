@@ -19,6 +19,11 @@ export function SingleSong({key, item}:{key:string, item:songInterface}){
               {item.is_favorite ? (<span>Yes</span>) : (<span>No</span>)}
             </Link>
           </td>
+          <td>
+            <button>
+              
+            </button>
+          </td>
         </tr>
     );
 }

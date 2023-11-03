@@ -1,7 +1,7 @@
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { songObjectInit } from "../interfaces/interface";
-import { destroySong, getSingleSong } from "../api/fetch";
+import { addSongToPlaylist, destroySong, getSingleSong } from "../api/fetch";
 
 
 export default function SongDetail(){
@@ -30,6 +30,18 @@ export default function SongDetail(){
         console.error(err);
       });
   };
+
+  const handleAddToPlaylist = () => {
+    addSongToPlaylist(String(id))
+      .then(() => {
+        console.log(`${id} is added successfully to the playlist`);
+        alert(`${id} is added successfully to the playlist`);
+        nav("/playlist");
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }
 
   return (
     <article>
@@ -60,6 +72,9 @@ export default function SongDetail(){
         </div>
         <div>
           <button onClick={handleDelete}>Delete</button>
+        </div>
+        <div>
+          <button onClick={handleAddToPlaylist}>Add to Playlist</button>
         </div>
       </div>
     </article>

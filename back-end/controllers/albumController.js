@@ -1,5 +1,6 @@
 const express = require("express");
-const { getAllAlbums, createOneAlbum, getOneAlbum, updateOneAlbum, deleteOneAlbum } = require('../queries/albums.js')
+const { getAllAlbums, createOneAlbum, getOneAlbum, updateOneAlbum, deleteOneAlbum } = require('../queries/albums.js');
+const { searchOneArtistByName } = require("../queries/artists.js");
 const albums = express.Router();
 
 /** get */

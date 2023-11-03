@@ -11,7 +11,16 @@ const getAllArtists = async () => {
 
 const getOneArtist = async (id) => {
     try{
-        const artist = await db.any(`SELECT * FROM artists WHERE id = ${id}`);
+        const artist = await db.any(`SELECT * FROM artists WHERE artist_id = ${id}`);
+        return artist;
+    } catch(err) {
+        return err;
+    }
+}
+
+const searchOneArtistByName = async (name) => {
+    try{
+        const artist = await db.one(`SELECT * FROM artists WHERE artist = ${name}`);
         return artist;
     } catch(err) {
         return err;
@@ -33,7 +42,7 @@ const createOneArtist = async (item) => {
 
 const updateOneArtist = async(id, body) => {
     try {
-        const artist = await db.any(`UPDATE artists SET artist='${body.artist}', nationality='${body.nationality}', is_favorite=${body.is_favorite} WHERE id = ${id} RETURNING *`);
+        const artist = await db.any(`UPDATE artists SET artist='${body.artist}', nationality='${body.nationality}', is_favorite=${body.is_favorite} WHERE artist_id = ${id} RETURNING *`);
         return artist;
     } catch(err){
         return err;
@@ -43,7 +52,7 @@ const updateOneArtist = async(id, body) => {
 const deleteOneAritst = async(id) => {
     //console.log(id);
     try {
-        const artist = await db.any(`DELETE FROM artists WHERE artist = ${id} RETURNING *`);
+        const artist = await db.any(`DELETE FROM artists WHERE artist_id = ${id} RETURNING *`);
         return artist;
     } catch(err){
         return err;
@@ -56,4 +65,5 @@ module.exports = {
     createOneArtist,
     updateOneArtist,
     deleteOneAritst,
+    searchOneArtistByName
 }
