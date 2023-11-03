@@ -24,7 +24,7 @@ const getOneAlbum = async (id) => {
 const deleteAlbum = async (id) => {
   try {
     const deletedAlbum = await db.one(
-      "DELETE FROM songs WHERE id=$1 RETURNING *",
+      "DELETE FROM albums WHERE id=$1 RETURNING *",
       id
     );
     return deletedAlbum;
