@@ -1,7 +1,7 @@
 const express = require("express");
 const albums = express.Router({ mergeParams: true });
 const { getOneSong } = require("../queries/songs.js");
-const { getAllAlbums } = require("../queries/albums.js");
+const { getAllAlbums, getOneAlbum, deleteAlbum, createAlbum, updateAlbum } = require("../queries/albums.js");
 
 albums.get("/", async (req, res) => {
   const { song_id } = req.params;

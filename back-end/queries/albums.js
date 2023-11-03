@@ -21,7 +21,7 @@ const getOneAlbum = async (id) => {
   }
 };
 
-const deleteOneAlbum = async (id) => {
+const deleteAlbum = async (id) => {
   try {
     const deletedAlbum = await db.one(
       "DELETE FROM songs WHERE id=$1 RETURNING *",
@@ -62,7 +62,7 @@ const updateAlbum = async (album) => {
 module.exports = {
   getAllAlbums,
   getOneAlbum,
-  deleteOneAlbum,
+  deleteAlbum,
   createAlbum,
   updateAlbum,
 };
