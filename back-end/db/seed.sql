@@ -12,7 +12,7 @@ VALUES
 
 INSERT INTO playlists (song_id, title, creator, creation_year)
 VALUES
-    ('1', "Don't Listen Unless Stable", 'Dan Miller', 1975),
+    ('1', 'Don''t Listen Unless Stable', 'Dan Miller', 1975),
     ('2', 'Music that Heals', 'Sarah Mikelson', 1980),
     ('2', 'Nostalgic Journeys', 'Jacob Daniels', NULL),
     ('4', 'Driving vocals', 'Ryan Han', 1980),
