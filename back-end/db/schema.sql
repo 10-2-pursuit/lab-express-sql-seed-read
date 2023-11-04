@@ -12,7 +12,7 @@
         is_favorite BOOLEAN
     );
 
-    CREATE TABLE albums (
+    CREATE TABLE playlists (
     id SERIAL PRIMARY KEY,
     title TEXT NOT NULL,
     creator TEXT NOT NULL,
