@@ -10,15 +10,15 @@ VALUES
     ('Mr. Startup', 'Wolf Parade', 'Thin Mind', '3:31', true ),
     ('We Got the World', 'Icona Pop', 'This is...', '3:17', false );
 
-INSERT INTO albums (song_id, title, artist, release_year)
+INSERT INTO playlists (song_id, title, creator, creation_year)
 VALUES
-    ('1', 'Young Americans', 'David Bowie', 1975),
-    ('2', 'Remain in Light', 'Talking Heads', 1980),
-    ('2', 'Remain in Light (Deluxe)', 'Talking Heads', NULL),
-    ('4', 'Remain in Light', 'Talking Heads', 1980),
-    ('4', 'Remains of the Day', 'Talking Heads', NULL),
-    ('3', 'Sand in the Vaseline', 'Talking Heads', 1992),
-    ('5', 'New Day Rising', 'Hüsker Dü', NULL),
-    ('6', 'Thin Mind', 'Wolf Parade', 2020),
-    ('7', 'This is...', 'Icona Pop', NULL),
-    ('7', 'Club Romantech', 'Icona Pop', 2023);
+    ('1', "Don't Listen Unless Stable", 'Dan Miller', 1975),
+    ('2', 'Music that Heals', 'Sarah Mikelson', 1980),
+    ('2', 'Nostalgic Journeys', 'Jacob Daniels', NULL),
+    ('4', 'Driving vocals', 'Ryan Han', 1980),
+    ('4', 'Feelings and Other Stupid Things', 'Millie Adams', NULL),
+    ('3', 'Astral traveling', 'Sean Farley', 1992),
+    ('5', 'Songs that will make you go WTF', 'Dean Mayers', NULL),
+    ('6', 'If you like anxiety, you should try depression', 'Max Conners', 2020),
+    ('7', 'Airplane Mode', 'Ian Woods', NULL),
+    ('7', 'The Ex Girlfriends Club', 'Enzo Lewis', 2023);
