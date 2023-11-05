@@ -4,6 +4,7 @@ const Song = ({ song, id }) => {
   return (
     <>
       <tr>
+        <td>{song.is_favorite ? (<span>♯</span>) : (<span>♭</span>)}</td>
         <td>{song.name}</td>
         <td>
           <Link to={`/songs/${id}`}>{song.artist}</Link>

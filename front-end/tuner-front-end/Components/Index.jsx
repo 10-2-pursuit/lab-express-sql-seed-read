@@ -14,7 +14,6 @@ const Index = () => {
       .catch((error) => {
         console.error("Error fetching data.", error);
       });
-      
   }, []);
 
   return (
@@ -24,6 +23,7 @@ const Index = () => {
         <table>
           <thead>
             <tr>
+              <th></th>
               <th>Song Name</th>
               <th>Artist</th>
               <th>Album</th>
@@ -31,7 +31,7 @@ const Index = () => {
           </thead>
           <tbody>
             {songs.map((song) => (
-              <Song key={song.id} song={song} /> 
+              <Song key={song.id} id={song.id} song={song} /> 
             ))}
           </tbody>
         </table>
