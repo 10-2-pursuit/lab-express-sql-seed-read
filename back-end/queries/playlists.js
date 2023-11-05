@@ -48,9 +48,9 @@ const createPlaylist = async (song_id, playlist) => {
 
 const updatePlaylist = async (playlist) => {
   try {
-    const { title, creator, creation_year, song_id, id } = playlist;
+    const { title, creator, creation_year, id, song_id } = playlist;
     const updatedPlaylist = await db.one(
-      "UPDATE playlists SET title=$1, creator=$2, creation_year=$3, song_id=$4 WHERE id=$5",
+      "UPDATE playlists SET title=$1, creator=$2, creation_year=$3, song_id=$4 WHERE id=$5 RETURNING *",
       [title, creator, creation_year, song_id, id]
     );
     return updatedPlaylist;
