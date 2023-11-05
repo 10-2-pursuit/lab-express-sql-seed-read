@@ -52,7 +52,7 @@ playlists.delete("/:playlist_id", async (req, res) => {
     if (deletedPlaylist) {
       res.status(200).json(deletedPlaylist);
     } else {
-      res.status(404).json({error: "No playlist at that id!"});
+      res.status(404).json({ error: "No playlist at that id!" });
     }
   } catch (error) {
     res.status(404).json({ error: "Something is wrong!" });
@@ -60,13 +60,13 @@ playlists.delete("/:playlist_id", async (req, res) => {
 });
 
 playlists.put("/:id", async (req, res) => {
-    const {id, song_id} = req.params;
-    const updatedPlaylist = await updatePlaylist({song_id, id, ...req.body});
-    if(updatedPlaylist.id) {
-        res.status(200).json(updatedPlaylist)
-    } else {
-        res.status(404).json({error: "No playlist at that id!"})
-    }
-})
+  const { id, song_id } = req.params;
+  const updatedPlaylist = await updatePlaylist({ song_id, id, ...req.body });
+  if (updatedPlaylist.id) {
+    res.status(200).json(updatedPlaylist);
+  } else {
+    res.status(404).json({ error: "No playlist at that id!" });
+  }
+});
 
 module.exports = playlists;
