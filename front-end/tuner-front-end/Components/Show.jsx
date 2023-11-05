@@ -10,7 +10,12 @@ const Show = () => {
 
   useEffect(() => {
     fetch(`${API}/songs/${id}`)
-      .then((res) => res.json())
+    .then((res) => {
+      if (!res.ok) {
+        navigate("/404");
+      }
+      return res.json();
+    })
       .then((song) => {
         setSong(song);
       })
