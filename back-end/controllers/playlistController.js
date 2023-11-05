@@ -16,7 +16,7 @@ playlists.get("/", async (req, res) => {
     const allPlaylists = await getAllPlaylists(song_id);
     res.json({ ...song, allPlaylists });
   } catch (error) {
-    res.json(error);
+    res.status(404).json({ error: "Something is wrong!" });
   }
 });
 
@@ -31,7 +31,7 @@ playlists.get("/:playlist_id", async (req, res) => {
       res.status(404).json("No playlist at that id");
     }
   } catch (error) {
-    res.json(error);
+    res.status(404).json({ error: "Something is wrong!" });
   }
 });
 
@@ -55,7 +55,7 @@ playlists.delete("/:playlist_id", async (req, res) => {
       res.status(404).json({error: "No playlist at that id!"});
     }
   } catch (error) {
-    res.send(error);
+    res.status(404).json({ error: "Something is wrong!" });
   }
 });
 
