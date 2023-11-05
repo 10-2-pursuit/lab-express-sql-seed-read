@@ -1,7 +1,6 @@
 import { useState } from "react";
-import { songObjectInit } from "../interfaces/interface";
-import { createSong } from "../api/fetch";
-import { useNavigate } from "react-router";
+import { artistObjectInit } from "../interfaces/interface";
+import { createArtist } from "../api/fetch";
 
 /**
  * NewEntryForm()
@@ -10,9 +9,8 @@ import { useNavigate } from "react-router";
  * 
  * @returns {React.ReactElement}
  */
-function NewEntryForm() {
-  const [song, setSong] = useState(songObjectInit);
-  const nav = useNavigate();
+function NewArtistForm() {
+  const [artist, setArtist] = useState(artistObjectInit);
 
   /**
    * handleTextChange()
@@ -23,7 +21,7 @@ function NewEntryForm() {
    * @param {customInputEventBundle} event
    */
   const handleTextChange = (event:React.ChangeEvent<HTMLInputElement>) => {
-    setSong({ ...song, [event.target.id]: event.target.value });
+    setArtist({ ...artist, [event.target.id]: event.target.value });
   };
 
   
@@ -35,63 +33,42 @@ function NewEntryForm() {
    */
   const handleSubmit = (event:React.ChangeEvent<HTMLFormElement>) => {
     event.preventDefault();
-    createSong(song)
-        .then(() => {
-          console.log("create success!");
-          nav("/songs");
-        })
+    createArtist(artist)
+        .then(() => console.log("create success!"))
         .catch((err)=>console.error(err));
     }
   
     const handleCheckboxChange = () => {
-        setSong({ ...song, is_favorite: !song.is_favorite });
+        setArtist({ ...artist, is_favorite: !artist.is_favorite });
       };
 
   return (
     <div className="New">
       <form onSubmit={handleSubmit}>
-        <label htmlFor="name">Name:</label>
+        <label htmlFor="name">Artist's Name:</label>
         <input
           id="name"
-          value={song.name}
+          value={artist.artist}
           type="text"
           onChange={handleTextChange}
-          placeholder="song name"
+          placeholder="Artist's name"
           required
         />
-        <label htmlFor="artist">Artist:</label>
+        <label htmlFor="artist">Nationality:</label>
         <input
           id="artist"
-          value={song.artist}
+          value={artist.nationality}
           type="text"
           onChange={handleTextChange}
-          placeholder="Artist name"
+          placeholder="Nationality"
           required
-        />
-        <label htmlFor="album">Album Name:</label>
-        <input
-          id="album"
-          type="text"
-          required
-          value={song.album}
-          placeholder="Album name"
-          onChange={handleTextChange}
-        />
-        <label htmlFor="time">Length:</label>
-        <input
-          id="time"
-          type="text"
-          required
-          value={song.time}
-          placeholder="length of time"
-          onChange={handleTextChange}
         />
         <label htmlFor="is_favorite">Is Favorite?:</label>
         <input
           id="is_favorite"
           type="checkbox"
           onChange={handleCheckboxChange}
-          checked={song.is_favorite}
+          checked={artist.is_favorite}
         />
         <br />
         <input type="submit" />
@@ -100,4 +77,4 @@ function NewEntryForm() {
   );
 }
 
-export default NewEntryForm;
+export default NewArtistForm;

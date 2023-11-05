@@ -5,9 +5,11 @@ import { removeSongToPlaylist } from "../api/fetch";
 export function SingleSongInPlaylist({
   key,
   item,
+  index,
 }: {
   key: string;
   item: playlistInterface;
+  index: number;
 }) {
   const nav = useNavigate();
 
@@ -28,7 +30,7 @@ export function SingleSongInPlaylist({
   return (
     <tr style={{ cursor: "alias" }} key={key}>
       <td>
-        <Link to={`/songs/${item.song_id}`}>{item["playlist_id"]}</Link>
+        <Link to={`/songs/${item.song_id}`}>{index+1}</Link>
       </td>
       <td>
         <Link to={`/songs/${item.song_id}`}>{item["name"]}</Link>

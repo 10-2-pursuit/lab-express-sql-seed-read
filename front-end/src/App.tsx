@@ -1,10 +1,10 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Nav from "./components/Nav";
-import Home from "./components/Home";
+import Home from "./pages/Home";
 import NewEntryForm from "./components/NewEntry";
 import SongDetail from "./components/SongDetail";
 import EditEntryForm from "./components/EditEntryForm";
-import FourOFour from "./components/FourOFour";
+import FourOFour from "./pages/FourOFour";
 import SongsIndex from "./components/SongsIndex";
 import Playlist from "./components/Playlist";
 

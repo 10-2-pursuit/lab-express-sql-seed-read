@@ -32,3 +32,16 @@ export const playlistObjectInit = {
     song_id: "",
     ...songObjectInit,
 }
+
+export interface artistsInterface{
+    artist: string,
+    nationality: string,
+    is_favorite: boolean,
+}
+
+export const artistObjectInit = {
+    artist_id: "",
+    artist: "",
+    nationality: "",
+    is_favorite: false,
+}

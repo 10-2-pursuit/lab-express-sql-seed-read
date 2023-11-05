@@ -1,4 +1,4 @@
-import { songInterface } from "../interfaces/interface";
+import { artistsInterface, songInterface } from "../interfaces/interface";
 
 const URL = import.meta.env.VITE_APP_API_URL;
 
@@ -74,5 +74,16 @@ export async function removeSongToPlaylist(id:string) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({id}),
+    });
+}
+
+export async function createArtist(item:artistsInterface) {
+    return await fetch(`${URL}/artists/`, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(item),
     });
 }

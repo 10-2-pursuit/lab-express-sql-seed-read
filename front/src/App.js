@@ -1,7 +1,7 @@
 import EditEntryForm from "../../front-end/src/components/EditEntryForm";
 import Footer from "../../front-end/src/components/Footer";
-import FourOFour from "../../front-end/src/components/FourOFour";
-import { Home } from "../../front-end/src/components/Home";
+import FourOFour from "../../front-end/src/pages/FourOFour";
+import { Home } from "../../front-end/src/pages/Home";
 import { Nav } from "../../front-end/src/components/Nav";
 import NewEntryForm from "../../front-end/src/components/NewEntry";
 import SongDetail from "../../front-end/src/components/SongDetail";

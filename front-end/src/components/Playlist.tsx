@@ -25,7 +25,7 @@ export default function Playlist(){
                 </thead>
                 <tbody className="spending-index">
                   {
-                    playlist.map((song, id) => <SingleSongInPlaylist key = {String(id)} item = {song}/>)
+                    playlist.map((song, id) => <SingleSongInPlaylist key = {String(id)} item = {song} index = {Number(id)}/>)
                   }
                 </tbody>
               </table>
