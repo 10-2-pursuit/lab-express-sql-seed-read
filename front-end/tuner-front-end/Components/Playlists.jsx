@@ -3,13 +3,10 @@ import { useParams } from "react-router-dom";
 import Playlist from "./Playlist";
 import PlaylistForm from "./PlaylistForm";
 const API = import.meta.env.VITE_BASE_URL;
-console.log(API)
 
 const Playlists = () => {
   const [playlists, setPlaylists] = useState([]);
   let { id } = useParams();
-
-
 
   useEffect(() => {
     fetch(`${API}/songs/${id}/playlists`)
@@ -52,16 +49,25 @@ const Playlists = () => {
       body: JSON.stringify(updatedPlaylist),
       headers: { "Content-Type": "application/json" },
     })
-      .then((res) => res.json())
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return res.json();
+      })
       .then((resJSON) => {
         const copyPlaylistsArr = [...playlists];
-        const updatedPlaylistIndex = copyPlaylistsArr.findIndex((playlist) => {
-          return playlist.id === updatedPlaylist.id;
+        const updatedPlaylistIndex = copyPlaylistsArr.findIndex(playlist => {
+         return playlist.id === updatedPlaylist.id;
         });
         copyPlaylistsArr[updatedPlaylistIndex] = resJSON;
         setPlaylists(copyPlaylistsArr);
+      })
+      .catch((error) => {
+        console.error("Error updating playlist:", error);
       });
   };
+  
 
   return (
     <section className="Playlists">
@@ -72,6 +78,7 @@ const Playlists = () => {
       {playlists.map((playlist) => (
         <Playlist
           key={playlist.id}
+          id={playlist.id} 
           playlist={playlist}
           handleDelete={handleDelete}
           handleEdit={handleEdit}

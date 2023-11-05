@@ -1,7 +1,7 @@
 import { useState } from "react";
 import PlaylistForm from "./PlaylistForm";
 
-const Playlist = (playlist, handleDelete, handleEdit) => {
+const Playlist = ({playlist, handleDelete, handleEdit}) => {
   const [viewPlaylistForm, setViewPlaylistForm] = useState(false);
   const toggleView = () => {
     setViewPlaylistForm(!viewPlaylistForm);

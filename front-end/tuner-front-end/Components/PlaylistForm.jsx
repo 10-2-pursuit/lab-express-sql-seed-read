@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
-const PlaylistForm = (playlistDetails, handleSubmit, toggleView, children) => {
+const PlaylistForm = ({playlistDetails, handleSubmit, toggleView, children}) => {
   let { id } = useParams();
 
   const [playlist, setPlaylist] = useState({
