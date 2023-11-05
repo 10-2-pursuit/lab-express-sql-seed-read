@@ -45,7 +45,7 @@ playlists.post("/", async (req, res) => {
   }
 });
 
-playlists.delete("/:playlist_id", async (res, req) => {
+playlists.delete("/:playlist_id", async (req, res) => {
   try {
     const { playlist_id } = req.params;
     const deletedPlaylist = await deletePlaylist(playlist_id);
@@ -59,7 +59,7 @@ playlists.delete("/:playlist_id", async (res, req) => {
   }
 });
 
-playlists.put("/:id", async (res, req) => {
+playlists.put("/:id", async (req, res) => {
     const {id, song_id} = req.params;
     const updatedPlaylist = await updatePlaylist({song_id, id, ...req.body});
     if(updatedPlaylist.id) {
