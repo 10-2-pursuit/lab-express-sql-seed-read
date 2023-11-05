@@ -1,5 +1,6 @@
 const express = require("express");
-const { getAllSongs, createOneSong, getOneSong, updateOneSong, deleteOneSong } = require('../queries/songs.js')
+const { getAllSongs, createOneSong, getOneSong, updateOneSong, deleteOneSong } = require('../queries/songs.js');
+const { checkName, checkBoolean } = require("../middlewares/validations.js");
 const songs = express.Router();
 
 /** get */
@@ -30,7 +31,7 @@ songs.get("/:id", async (req, res) => {
 });
 
 /** post */
-songs.post("/", async (req, res) => {
+songs.post("/", checkName, checkBoolean, async (req, res) => {
     //const {name, artist, album, time, is_favorite} = req.body;
     const song = await createOneSong(req.body);
     if(song[0] && song.length > 0){
@@ -42,7 +43,7 @@ songs.post("/", async (req, res) => {
 });
 
 /** put */
-songs.put("/:id", async (req,res) => {
+songs.put("/:id", checkName, checkBoolean, async (req,res) => {
     const {id} = req.params;
 
     const song = await updateOneSong(id, req.body);
