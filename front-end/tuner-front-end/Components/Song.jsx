@@ -11,6 +11,7 @@ const Song = ({ song, id }) => {
         </td>
         <td>{song.album}</td>
       </tr>
+      <hr />
     </>
   );
 };

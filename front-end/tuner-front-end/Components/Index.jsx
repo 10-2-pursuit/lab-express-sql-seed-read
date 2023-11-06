@@ -23,7 +23,7 @@ const Index = () => {
         <table>
           <thead>
             <tr>
-              <th></th>
+              <th>Yes(♯) /No(♭)</th>
               <th>Song Name</th>
               <th>Artist</th>
               <th>Album</th>

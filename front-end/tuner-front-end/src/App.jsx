@@ -6,7 +6,6 @@ import New from "../Components/New";
 import Show from "../Components/Show";
 import Update from "../Components/Update";
 import ErrorMessage from "../Components/ErrorMessage"
-import "./App.css";
 
 function App() {
   return (

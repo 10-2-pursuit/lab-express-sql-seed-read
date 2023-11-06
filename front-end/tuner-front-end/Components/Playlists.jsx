@@ -12,7 +12,7 @@ const Playlists = () => {
     fetch(`${API}/songs/${id}/playlists`)
       .then((res) => res.json())
       .then((resJSON) => {
-        setPlaylists(resJSON.allPlaylists)
+        setPlaylists(resJSON.allPlaylists);
       })
       .catch((error) => console.error("API request failed:", error));
   }, [id, API]);
@@ -35,7 +35,7 @@ const Playlists = () => {
       .then((res) => {
         const copyPlaylistsArr = [...playlists];
         const deletedPlaylistIndex = copyPlaylistsArr.findIndex((playlist) => {
-           playlist.id === playlistId;
+          playlist.id === playlistId;
         });
         copyPlaylistsArr.splice(deletedPlaylistIndex, 1);
         setPlaylists(copyPlaylistsArr);
@@ -57,8 +57,8 @@ const Playlists = () => {
       })
       .then((resJSON) => {
         const copyPlaylistsArr = [...playlists];
-        const updatedPlaylistIndex = copyPlaylistsArr.findIndex(playlist => {
-         return playlist.id === updatedPlaylist.id;
+        const updatedPlaylistIndex = copyPlaylistsArr.findIndex((playlist) => {
+          return playlist.id === updatedPlaylist.id;
         });
         copyPlaylistsArr[updatedPlaylistIndex] = resJSON;
         setPlaylists(copyPlaylistsArr);
@@ -67,23 +67,24 @@ const Playlists = () => {
         console.error("Error updating playlist:", error);
       });
   };
-  
 
   return (
     <section className="Playlists">
-      <h3>Playlists that contain this song</h3>
+      <h3>Playlists that contain this song:</h3>
       <PlaylistForm handleSubmit={handleAdd}>
-        <h4>Add a new Playlist</h4>
+        <h5>Add a new Playlist</h5>
       </PlaylistForm>
-      {playlists.map((playlist) => (
-        <Playlist
-          key={playlist.id}
-          id={playlist.id} 
-          playlist={playlist}
-          handleDelete={handleDelete}
-          handleEdit={handleEdit}
-        />
-      ))}
+      <div className="playlist-list">
+        {playlists.map((playlist) => (
+          <Playlist
+            key={playlist.id}
+            id={playlist.id}
+            playlist={playlist}
+            handleDelete={handleDelete}
+            handleEdit={handleEdit}
+          />
+        ))}
+      </div>
     </section>
   );
 };

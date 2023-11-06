@@ -45,7 +45,7 @@ const Show = () => {
         </h3>
         <h4>Album: {song.album}</h4>
         <h5>Time: {song.time} mins</h5>
-        <h5>Favorite Song: {song.is_favorite ? (<span>♯ (yes)</span>) : (<span>♭ (no)</span>)}</h5>
+        <h5>Favorite Song: {song.is_favorite ? (<span>♯</span>) : (<span>♭</span>)}</h5>
         <div className="showNavigation">
           <div>
             <Link to={`/songs`}>
@@ -59,8 +59,9 @@ const Show = () => {
           </div>
           <button onClick={handleDelete}>Delete</button>
         </div>
-        <Playlists/>
+        <hr />
       </article>
+        <Playlists/>
     </div>
   );
 };
